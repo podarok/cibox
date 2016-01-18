@@ -15,7 +15,7 @@
     <hudson.tasks.Shell>
       <command>
         {% if item.origin_environment != "" %}
-sudo ssh -t {{ project_name }}.{{ item.environment_name }}@{{ item.server }}.{{ item.cloud_hosting }} "drush @{{ project_name }}.{{ item.environment_name }} ah-db-import ~/backups/latest_{{ item.origin_environment }}.sql.gz --db={{ project_name }} --drop --force"
+sudo ssh -t {{ project_name }}.{{ item.environment_name }}@{{ item.server }}.{{ item.cloud_hosting }} "drush @{{ project_name }}.{{ item.environment_name }} ah-db-import ~/backups/latest_{{ item.origin_environment }}.sql.gz --drop --force"
         {% endif %}
       </command>
     </hudson.tasks.Shell>
